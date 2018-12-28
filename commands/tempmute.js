@@ -38,10 +38,11 @@ module.exports.run = async (bot, message, args) => {
   .setColor("#f1f441")
   .addField("Užčiauptas", `${tomute} su ID: ${tomute.id}`)
   .addField("Kas užčiaupe", `${message.author} su ID: ${message.author.id}`)
-  .addField("Kiek laiko", `${ms(ms(mutetime))}`);
+  .addField("Kiek laiko", `${(ms(ms(mutetime)))}`)
+  .addField("Užčiauptas kur", message.channel);
 
 
-  let mutechanel = message.guild.channels.find(`name`, "reportai_ismesti_banai");//chekinam ar yra toks chanelis
+  let mutechanel = message.guild.channels.find(channel => channel.name === "reportai_ismesti_banai");//chekinam ar yra toks chanelis
   if(!mutechanel) return message.channel.send("Neradau chanelio");
 
   message.delete().catch(O_o=>{});
