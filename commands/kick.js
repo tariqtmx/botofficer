@@ -4,6 +4,7 @@ module.exports.run = async (bot, message, args)=>{
   let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
       if(!kUser) return message.channel.send("Nerandu tokio vardo");
       let kReason = args.join(" ").slice(22);
+      if(!kReason) return message.channel.send("Neparasiai priezasties");
       if(!message.member.hasPermission("MANAGE_MESSAGES")){
         message.delete();
         message.author.send("Net Nebandyk :)");
