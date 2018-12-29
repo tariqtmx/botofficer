@@ -2,7 +2,7 @@ const Botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const fs = require("fs")
 const bot = new Discord.Client({disableEveryone: true});
-const antispam = require("discord-anti-spam");
+const antispam = require("./discord-anti-spam");
 bot.commands = new Discord.Collection();
 
 fs.readdir("./commands", (err, files) => {
