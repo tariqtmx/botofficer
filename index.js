@@ -29,6 +29,16 @@ bot.on("ready", async () => {
   bot.user.setActivity("Patruliuoja", {type: "WATCHING"});
 });
 
+//auto role add
+bot.on("guildMemberAdd", member => {
+  console.log("Žmogus vardu " + member.user.username + " katik prisijunge!")
+
+  let role = member.guild.roles.find(role => role.name === "Member");
+
+  member.addRole(role)
+});
+
+
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type == "dm") return;
@@ -71,6 +81,7 @@ bot.on("message", async message => {
   {
     message.channel.send("Pong!");
   }
+  
 
 });
 
