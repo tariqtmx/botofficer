@@ -27,6 +27,7 @@ module.exports.run = async (bot, message, args)=>{
         coins: sCoins - 500
       };
       uAdd.addRole(viprole).catch(console.error);
+      message.reply("Tu nusipirkai VIP Role!");
       return;
     };
   message.reply("tu neturi pakankamai žetonu!").then(msg =>{msg.delete(5000)});
@@ -38,6 +39,7 @@ module.exports.run = async (bot, message, args)=>{
        coins: sCoins - 250
      };
      uAdd.addRole(djrole).catch(console.error);
+     message.reply("Tu nusipirkai DJ Role!");
      return;
    };
  message.reply("tu neturi pakankamai žetonu!").then(msg =>{msg.delete(5000)});
@@ -49,10 +51,14 @@ if(msg.includes("MEMBER+")){
       coins: sCoins - 150
     };
     uAdd.addRole(memrole).catch(console.error);
+    message.reply("Tu nusipirkai Member+ Role!");
     return;
   };
 message.reply("tu neturi pakankamai žetonu!").then(msg =>{msg.delete(5000)});
 }
+  fs.writeFile("./coins.json", JSON.stringify(coins), (err) =>{
+  if(err) console.log(err);
+});
 
 }
 
