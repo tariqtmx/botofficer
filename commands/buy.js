@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
-const coins = require("../coins.json")
+const coins = require("../coins.json");
+const fs = require("fs");
 
 module.exports.run = async (bot, message, args)=>{
   const msg = message.content.toUpperCase();
