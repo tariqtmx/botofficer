@@ -10,8 +10,7 @@ module.exports.run = async (bot, message, args)=>{
      .addField("Sukurtas", message.guild.createdAt)
      .addField("Tu prisijungei", message.member.joinedAt)
      .addField("Išviso musu yra", message.guild.memberCount);
-     message.delete();
-     message.author.send(serverembed);
+     message.channel.send(serverembed).then(msg => {msg.delete(3000)})
 }
 
 module.exports.help = {
