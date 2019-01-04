@@ -129,7 +129,7 @@ bot.on("message", async message => {
     let coinEmbed = new Discord.RichEmbed()
     .setAuthor(message.author.username)
     .setColor("#ffc132")
-    .addField("💰", `${coinAmt} žetoni pridėtas!`);
+    .addField("💰", `${coinAmt} žetonas pridėtas!`);
 
     message.channel.send(coinEmbed).then(msg => {msg.delete(4000)});
 
