@@ -47,8 +47,8 @@ antispam(bot, {
   interval: 1000, // Amount of time in ms users can send a maximum of the maxBuffer variable before getting banned.
   warningMessage: "baik spaminti arba gausi per pakauši.", // Warning message send to the user indicating they are going to fast.
   banMessage: "buvo užbanintas už spaminima, gal dar kažkas nori?", // Ban message, always tags the banned user in front of it.
-  maxDuplicatesWarning: 6,// Maximum amount of duplicate messages a user can send in a timespan before getting warned
-  maxDuplicatesBan: 10, // Maximum amount of duplicate messages a user can send in a timespan before getting banned
+  maxDuplicatesWarning: 10,// Maximum amount of duplicate messages a user can send in a timespan before getting warned
+  maxDuplicatesBan: 15, // Maximum amount of duplicate messages a user can send in a timespan before getting banned
   deleteMessagesAfterBanForPastDays: 7, // Delete the spammed messages after banning for the past x days.
   exemptUsers: ["Boost#7515", "MldcČiūvas#0591", "BotOfficer#2653", "Lincax#8383"]
 });
