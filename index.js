@@ -5,7 +5,7 @@ const bot = new Discord.Client({disableEveryone: true});
 const antispam = require("./discord-anti-spam");
 bot.commands = new Discord.Collection();
 let coins = require("./coins.json");
-let xp = require("./xp.json");
+
 
 fs.readdir("./commands", (err, files) => {
   if(err) console.log(err);
