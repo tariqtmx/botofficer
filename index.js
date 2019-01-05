@@ -134,34 +134,7 @@ bot.on("message", async message => {
     message.channel.send(coinEmbed).then(msg => {msg.delete(4000)});
 
   }
-  //xp system
-  let xpAdd = Math.floor(Math.random() * 7) +5;
-  console.log(xpAdd);
-  if(!xp[message.author.id]){
-    xp[message.author.id] = {
-      xp: 0,
-      level: 0
-    }
-  }
-  //leveling system
-  let curxp = xp[message.author.id].xp;
-  let curlvl = xp[message.author.id].level;
-  let nxtLvl = xp[message.author.id].level * 300;//level up xp kiek reikia
-  xp[message.author.id].xp = curxp + xpAdd;
-  if(nxtLvl <= xp[message.author.id].xp){
-    xp[message.author.id].level = curlvl + 1; //levelup sytem
-
-    let lvlup = new Discord.RichEmbed()
-    .setTitle("🚨Pasikelei Lygi!🚨")
-    .setColor("#a3ffba")
-    .addField("Dabar tavo lygis yra", curlvl + 1);
-    message.channel.send(lvlup).then(msg => {msg.delete(5000)})
-
-  }
-  fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
-    if(err) console.log(err)
-  });
-  console.log(`level is ${curlvl}`);
+ 
 });
 
 
